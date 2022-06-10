@@ -1,0 +1,32 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: gateway-service
+  jackson: 
+    default-property-inclusion: NON_NULL
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "http://localhost:8080"
+              #allowedOrigins: "137.184.82.203"
+              allowCredentials: true
+              allowedMethods: 
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              allowedHeaders: 
+              - origin
+              - content-type
+              - accept
+              - authorization
+              - cookie
+#secret key - should be encrypted
+fast: 
+  food: 
+    web: 
+      app: 
+        jwtSecret: fastFoodSecret
