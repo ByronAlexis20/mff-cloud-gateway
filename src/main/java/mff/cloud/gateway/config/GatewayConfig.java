@@ -18,7 +18,7 @@ public class GatewayConfig {
 	public RouteLocator routes(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("auth", r -> r.path("/api/auth/**").uri("http://localhost:4040/"))
-				.route("auth-empresa", r -> r.path("/nw-auth/empresa/**").uri("http://localhost:8080/"))
+				.route("mff-seguridad", r -> r.path("/mff-seguridad/**").uri("http://localhost:4041/"))
 				.route("nw-seguridad", r -> r.path("/nw-seguridad/**").filters(f -> f.filter(filter)).uri("http://localhost:6001/"))
 				.route("error", r -> r.path("/error/**").uri("http://localhost:8080/")).build();
 	}
